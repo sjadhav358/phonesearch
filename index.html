@@ -1,0 +1,219 @@
+<html>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;		
+}
+
+.chatbox-holder {
+  position: fixed;
+  right: 0;
+  bottom: 15px; 
+}
+
+.chatbox {
+  width: 500px;
+  height: 600px;
+  margin: 0 20px 0 0;
+  position: relative; 
+  display: flex;
+  flex-flow: column;
+  border-radius: 10px 10px 0 0;
+  background:white;
+  bottom: 0;
+  
+}
+
+.chatbox-top {
+  position: relative;
+  display: flex;
+  padding: 10px 0;
+  border-radius: 10px 10px 0 0;
+  background: lightblue;
+}
+
+.chat-name{
+  flex: 1;
+  padding: 0 0 0 95px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #30649c;
+  text-shadow: 1px 1px 0 white;
+}
+
+.chatbox-avatar {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: white;
+  padding: 3px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+  position: absolute;
+  transition: .1s ease-out;
+  bottom: 0;
+  left: 6px;
+}
+
+.chatbox-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.chat-messages {
+  border-top: 1px solid rgba(0, 0, 0, .05);
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  flex: 1;
+}
+
+.message-box-holder {
+  width: 100%;
+height:auto;
+ margin-top:30px;
+  margin-right:100;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+ 
+}
+
+.message-sender {
+  font-size: 12px;
+  margin: 0 0 15px;
+  align-self: flex-start;
+}
+
+
+.message-box {
+  padding: 6px 10px;
+  border-radius: 6px 0 6px 0;
+  position: relative;
+  background:green;
+  border: 2px solid rgba(100, 140, 0, .10);
+  color: black;
+  font-size: 18px;
+
+}
+
+.message-box:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  border-top: 10px solid rgb(0,128,0);
+
+  border-right: none;
+  bottom: -22px;
+  right: 10px;
+}
+.message-partner {
+  background:lightblue;
+  border: 2px solid rgba(0, 114, 135, .1);
+  align-self: flex-start;
+}
+
+.message-partner:after {
+  right: auto;
+  bottom: auto;
+  top: -22px;
+  left: 9px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid rgba(0, 114, 135, .2);
+  border-left: none;
+}
+
+.chat-input-holder {
+  display: flex;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+ background: lightblue;
+
+}
+.chat-input {
+  resize: none;
+  padding: 5px 10px;
+  height: 40px;
+  font-family: 'Lato', sans-serif;
+	font-size: 14px;
+  color: #000000;
+  flex: 1;
+  border: none;
+  background: rgba(0, 0, 0, .05);
+   border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+.message-send {
+  font-size: 15px;
+  padding: 0 15px;
+  border: none;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+.button {background-color: #f44336;
+width:25px;
+
+  margin: 2px;
+  border: none;
+
+} 
+
+ .d {
+    width: 220px;
+    border: none;
+    /* float: right; */
+    margin-left: 65px;
+
+}
+</style>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTextarea").value;
+  var divicontainer=document.getElementById("val");
+  var divi=document.getElementById("val").innerHTML;
+  var msgcontent=document.getElementById('demo');
+  var updated=divi+"<div class='message-box-holder'><div class='message-box' id='demo'>"+x+"</div></div>";
+  divicontainer.innerHTML=updated;
+  document.getElementById("myTextarea").value="";
+}
+</script>
+<body bgcolor="gray">
+  <div class="chatbox-holder">
+  <div class="chatbox">
+    <div class="chatbox-top">
+      <div class="chatbox-avatar">
+        <img src="c1.jpg"></a> 
+      </div>
+      <div class="chat-name">
+        <h3 align="center">CHATBOT</h3>
+
+      </div>
+
+
+ <button class="button "> X </button> <a href="fol.html"></a>
+
+     </div>
+     <div class="chat-messages">
+<div class="message-box message-partner">
+          What can I help you?
+        </div>
+
+<div id="val" class="d">
+
+       
+</div>
+</div>
+    
+    <div class="chat-input-holder">
+      <textarea class="chat-input" id="myTextarea"></textarea>
+      <input type="submit" value="Send" onclick="myFunction()" class="message-send">
+    </div>
+  </div>  
+</body>
+</html>
+
